@@ -25,8 +25,15 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace 'co.paystack.flutter' // Or something unique
-    compileSdkVersion 32
+    namespace 'co.paystack.flutter'
+    compileSdkVersion 34
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }// Or something unique
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
